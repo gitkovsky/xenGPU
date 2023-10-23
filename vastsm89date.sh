@@ -53,12 +53,12 @@ echo "-------------miner.py change BLUE color--------------"
 sed -i 's@BLUE = "\\033\[34m@BLUE = "\\033\[36m@g' miner.py
 sleep 1
 
-echo "-------------miner.py add datetime to Mining block--------------"
-sed -i 's@print(f"Mining block {i}...")@print(f"Mining block {i}..." + datetime.now().strftime('\''%Y-%m-%d %H:%M:%S'\''))@g' miner.py
-sleep 1
-
 echo "-------------miner.py add datetime to Mining--------------"
 sed -i 's@desc=f"{GREEN}Mining{RESET}"@desc=f"{datetime.now().strftime('\''%Y-%m-%d %H:%M:%S'\'')} {GREEN}Mining{RESET}"@g' miner.py
+sleep 1
+
+echo "-------------miner.py add datetime to Mining block--------------"
+sed -i 's@print(f"Mining block {i}...")@print(f"Mining block {i}..." + datetime.now().strftime('\''%Y-%m-%d %H:%M:%S'\''))@g' miner.py
 sleep 1
 
 echo "-------------sudo pip install -U -r requirements.txt--------------"
