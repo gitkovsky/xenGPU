@@ -49,7 +49,7 @@ echo "-------------config.conf address changed--------------"
 sed -i 's/account = 0x24691e54afafe2416a8252097c9ca67557271475/account = 0xE92104Fd9131217326329E71464F24DeD78f745c/g' config.conf
 sleep 1
 
-echo "-------------sed -i 's@BLUE = "\\033\[34m@BLUE = "\\033\[36m@g' miner.py--------------"
+echo "-------------miner.py change BLUE color--------------"
 sed -i 's@BLUE = "\\033\[34m@BLUE = "\\033\[36m@g' miner.py
 sleep 1
 
