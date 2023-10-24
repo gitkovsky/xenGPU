@@ -53,8 +53,12 @@ echo "-------------miner.py change BLUE color--------------"
 sed -i 's@BLUE = "\\033\[34m@BLUE = "\\033\[36m@g' miner.py
 sleep 1
 
+echo "-------------miner.py add current datetime to miner.py--------------"
+sed -i 's@def mine_block(stored_targets, prev_hash, address):@mining_time = datetime.now().strftime('\''%Y-%m-%d %H:%M:%S'\'')\n\ndef mine_block(stored_targets, prev_hash, address):@g' miner.py
+sleep 1
+
 echo "-------------miner.py add datetime to Mining--------------"
-sed -i 's@desc=f"{GREEN}Mining{RESET}"@desc=f"{datetime.now().strftime('\''%Y-%m-%d %H:%M:%S'\'')} {GREEN}Mining{RESET}"@g' miner.py
+sed -i 's@desc=f"{GREEN}Mining{RESET}"@desc=f"{mining_time} {GREEN}Mining{RESET}"@g' miner.py
 sleep 1
 
 echo "-------------miner.py add datetime to Mining block--------------"
