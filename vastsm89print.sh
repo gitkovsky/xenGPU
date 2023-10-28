@@ -74,6 +74,10 @@ sed -i 's@print(f"Mining block {i}...")@print(f"Mining block {i}..." + datetime.
 sleep 1
 
 echo "-------------miner.py print--------------"
+sed -i 's@^\                    filepath = os.path.join(BlockDir, filename)@                    filepath = os.path.join(BlockDir, filename)\n                    print(filepath)@g' miner.py
+sleep 1
+
+echo "-------------miner.py print--------------"
 sed -i 's@^\                        data = f.read()@                        data = f.read()\n                        print(data)@g' miner.py
 sleep 1
 
